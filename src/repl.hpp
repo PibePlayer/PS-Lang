@@ -1,5 +1,5 @@
-#ifndef _repl_h_
-#define _repl_h_
+#ifndef _REPL_HPP_
+#define _REPL_HPP_
 
 #include <iostream>
 #include "pslbase.hpp"
@@ -10,17 +10,31 @@ struct repl{
 
   std::string inwords; std::string words;
 
-  struct variables{
-    std::map<std::string, int> integers;
-  };
-
   void loop(){
+
+    std::string type;
+    std::string in;
+    std::string words;
 
     do{
       std::cout << "> ";
-      std::getline(std::cin, inwords);
+      std::getline(std::cin, repl::inwords);
 
-    }while(inwords != ":q");
+      if(repl::inwords != ""){
+        if(psl::isDeclaring(psl::tokenize(inwords, ' ')[0])){
+          std::cout << "is Declaring a " << psl::tokenize(inwords, ' ')[0] << std::endl;
+        }else{
+
+        in = psl::evaluate(inwords);
+        type = in.substr(0, 1);
+        words = in.substr(1, in.size() - 1);
+
+        std::cout << words << " is an " << psl::getType(type) << std::endl;
+      }
+
+      }
+
+    }while(repl::inwords != ":q" && repl::inwords != "\e");
 
   }
 

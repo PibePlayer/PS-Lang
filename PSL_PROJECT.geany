@@ -28,10 +28,11 @@ long_line_behaviour=0
 long_line_column=60
 
 [files]
-current_page=1
-FILE_NAME_0=163;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Fmain.cpp;0;2
-FILE_NAME_1=293;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Frepl.hpp;0;2
-FILE_NAME_2=145;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Fpslbase.hpp;0;2
+current_page=0
+FILE_NAME_0=749;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Frepl.hpp;0;2
+FILE_NAME_1=690;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Fpslbase.hpp;0;2
+FILE_NAME_2=385;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Ffunctions.hpp;0;2
+FILE_NAME_3=104;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpublic%2FPS_Lang%2Fsrc%2Fmain.cpp;0;2
 
 [build-menu]
 C++FT_00_LB=_Compile
@@ -39,7 +40,7 @@ C++FT_00_CM=g++ -Wall -c src/main.cpp -o build/Linking/main.o --std=c++11
 C++FT_00_WD=%p
 filetypes=C++;
 C++FT_01_LB=_Build
-C++FT_01_CM=g++ -Wall -o build/Debug/bin/psl src/main.cpp --std=c++11
+C++FT_01_CM=g++ -Wall -o build/Debug/bin/psl src/main.cpp --std=c++11 && aversion src/version.hpp
 C++FT_01_WD=%p
 EX_00_LB=_Execute
 EX_00_CM=./build/Debug/bin/psl
